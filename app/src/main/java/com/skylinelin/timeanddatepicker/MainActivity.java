@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         if (date!=null){
             calendar.setTime(date);
         }
-
+        //这里和TimePicker不一样，设置参数统一用init方法
         mDatePicker.init(calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH),
