@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Log.d(TAG, year+"-"+monthOfYear+"-"+dayOfMonth);
+
+                        Toast.makeText(MainActivity.this,year+"-"+monthOfYear+"-"+dayOfMonth,Toast.LENGTH_SHORT).show();
                     }
                 });
 
