@@ -1,12 +1,11 @@
 package com.skylinelin.timeanddatepicker;
 
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -61,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
         if (date!=null){
             calendar.setTime(date);
         }
+
+        mDatePicker.init(calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH),
+                new DatePicker.OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                            Log.d(TAG, year+"-"+monthOfYear+"-"+dayOfMonth);
+                    }
+                });
 
     }
 }
